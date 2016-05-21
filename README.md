@@ -1,7 +1,7 @@
 # bln.js
 ## Bayesian Logic Networks
 
-BLN is an ES6 library for bayesian logic network calculations.  It allows you to 
+BLN is an ES6 library for Bayesian logic network calculations.  It allows you to 
 construct logic networks and query them for probabilities.
 
 ## Installation
@@ -14,7 +14,7 @@ Or you can download `bayes.js` above.
 
 ### Events
 
-BLN works with *events* and *probabilities*.  Events can have an outome that is
+BLN works with *events* and *probabilities*.  Events can have an outcome that is
 either true or false, like `is_sunny` or `has_disease`. Events are stored in a 
 centralized database—all the constructor returns is a reference to the event 
 object.  Events are created using the `EVENT()` function, which can also be 
@@ -33,7 +33,7 @@ EVENT `is_sunny`;
 EVENT `has_disease`;
 ```
 
-Events can be negated by using the bitwise negation operator: `~`.  So we can do:
+Events can be negated by using the bit-wise negation operator: `~`.  So we can do:
 ```javascript
 let is_cloudy = ~is_sunny;
 let healthy = ~has_disease;
@@ -41,12 +41,12 @@ let healthy = ~has_disease;
 
 ### Probabilities
 
-Probabilities represent the chances of an event occuring.  They can be both set
+Probabilities represent the chances of an event occurring.  They can be both set
 and queried.  Probabilities come in three types: simple, conditional, and joint.
 A simple probability does not depend on other events, like `P(earthquake)`. A
 conditional probability does depend on the outcome of other events, like 
 `P(grass_wet).given(is_raining)`. A joint probability represents the chances
-of a series of events all occuring together, like `P(earthquake, thunderstorm)`.
+of a series of events all occurring together, like `P(earthquake, thunderstorm)`.
 
 Known probabilities are set by using the `is()` and `given()` methods attached
 to the probability object.  Constructed probabilities are passed to the `facts()`
@@ -66,7 +66,7 @@ probability as a decimal, or as a percentage greater than 1.  So we could have
 done `P(earthquake).is(5)`.
 
 Conditional probabilities are assigned with the `given()` function.  It is the 
-responsibility of the caller to make sure that every possibile combination of an
+responsibility of the caller to make sure that every possible combination of an
 event's dependencies have been listed and assigned a probability.  For example,
 the following would lead to an error later, when probabilities are calculated, 
 because the probability of wet grass in the event of no rain is not specified:
@@ -103,4 +103,4 @@ The use of conditional probabilities and negation is as before.
 ## More Information
 
 More detailed information about functions and types can be found in the
-[API](API.md)
+[API](API.md).
