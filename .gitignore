@@ -1,0 +1,4 @@
+bower_components
+*.tmp
+*.bak
+.DS_Store

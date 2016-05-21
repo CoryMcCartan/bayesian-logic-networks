@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+documentation build bayes.js -f md -o API.md
+
