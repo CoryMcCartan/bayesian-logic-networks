@@ -10,6 +10,14 @@ construct logic networks and query them for probabilities.
 
 Or you can download `bayes.js` above.
 
+For usage in environments with `require()`, use as follows:
+```javascript
+require("./bayes.js")(global); // for global usage of BLN functions
+
+let BLN = {};
+require("./bayes.js")(BLN); // for namespaced usage of functions
+```
+
 ## Basic Usage
 
 ### Events

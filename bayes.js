@@ -4,13 +4,13 @@
  * © 2016.
  */
 
-(function(root) {
+let bln = function(root) {
     let id_counter = 0;
 
     let network = [];
 
     /**
-     * A bayesian event.
+     * A Bayesian event.
      * @typedef {number} BayesianEvent
      */
 
@@ -356,4 +356,11 @@
         version: "1.0.0"
     };
 
-})(typeof exports === "undefined" ? this : exports);
+}
+
+if (typeof module === "undefined")
+    bln(this);
+else
+    module.exports = function(scope) {
+        bln(scope);
+    };

@@ -1,3 +1,5 @@
+let bln = require("./bayes.js")(global); 
+
 function main_() {
     let rain = EVENT `R`,
         cloudy = EVENT `C`,
@@ -23,11 +25,11 @@ function main_() {
 }
 
 function main() {
-    EVENT `B`;
-    EVENT `E`;
-    EVENT `A`;
-    EVENT `J`;
-    EVENT `M`;
+    let burglary = EVENT `B`;
+    let earthquake = EVENT `E`;
+    let alarm = EVENT `A`;
+    let john_calls = EVENT `J`;
+    let mary_calls = EVENT `M`;
 
     facts(
         P(burglary).is(0.001),
@@ -78,16 +80,18 @@ function _main() {
 }
 
 function main_() {
-    EVENT `cancer`;
-    EVENT `test`;
+    let cancer = EVENT `cancer`;
+    let test = EVENT `test`;
 
     facts(
         P(cancer).is(0.005),
         P(test)
             .given(cancer).is(0.99)
-            .given(~cancer).is(0.05)
+            .given(~cancer).is(0.01)
     );
 
     console.log(+P(test));
     console.log(+P(cancer).given(test));
 }
+
+main_();
